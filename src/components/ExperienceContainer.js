@@ -1,10 +1,12 @@
 import React from "react";
-import { Box } from "@material-ui/core";
+import { Box, Typography } from "@material-ui/core";
 
 const ExperienceContainer = (props) => {
   return (
     <Box>
-      {props.title}
+      <Typography variant="h4" gutterBottom>
+        {props.title}
+      </Typography>
     </Box>
   );
 };

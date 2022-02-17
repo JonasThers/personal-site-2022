@@ -4,7 +4,7 @@ import { Typography, Box } from "@material-ui/core";
 const Hero = () => {
   return (
     <Box>
-      <Typography variant="h2" gutterBottom component="div">
+      <Typography variant="h2" gutterBottom>
         Jonas The Developer
       </Typography>
     </Box>

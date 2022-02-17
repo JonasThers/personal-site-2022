@@ -5,7 +5,7 @@ const Loading = () => {
 
     const [ dots, setDots] = useState('');
 
-    const { loading, setLoading } = useContext(LoadingContext);
+    const { setLoading } = useContext(LoadingContext);
 
     useEffect(() => {
         setTimeout(() => {
