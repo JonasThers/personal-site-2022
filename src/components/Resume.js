@@ -4,7 +4,7 @@ import { Typography, Box, Grid } from "@material-ui/core";
 
 const Resume = () => {
   return (
-    <Box>
+    <Box id="resume">
       Resume
       <Grid container spacing={2}>
         <Grid item xs={6}>
