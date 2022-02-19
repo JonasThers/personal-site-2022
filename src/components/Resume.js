@@ -1,19 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import ExperienceContainer from "./ExperienceContainer";
-import { Typography, Box, Grid } from "@material-ui/core";
+import { Box, Grid } from "@material-ui/core";
 
 const Resume = () => {
+  const [loading, setLoading] = useState(true);
+  const [schoolData, setSchoolData] = useState([]);
+  const [workData, setWorkData] = useState([]);
+
+  useEffect(() => {
+    async function getData() {
+      const school = await axios("http://localhost:1337/api/schools");
+      const work = await axios("http://localhost:1337/api/works");
+
+      setSchoolData(school.data);
+      setWorkData(work.data);
+      setLoading(false);
+    }
+
+    getData();
+  }, []);
+
   return (
     <Box id="resume">
       Resume
-      <Grid container spacing={2}>
-        <Grid item xs={6}>
-          <ExperienceContainer title="Work experience" />
+      {loading ? (
+        "Loading"
+      ) : (
+        <Grid container spacing={2}>
+          <Grid item xs={6}>
+            <ExperienceContainer
+              title="Work experience"
+              type="work"
+              {...workData}
+            />
+          </Grid>
+          <Grid item xs={6}>
+            <ExperienceContainer
+              title="Education"
+              type="school"
+              {...schoolData}
+            />
+          </Grid>
         </Grid>
-        <Grid item xs={6}>
-          <ExperienceContainer title="Education" />
-        </Grid>
-      </Grid>
+      )}
     </Box>
   );
 };
