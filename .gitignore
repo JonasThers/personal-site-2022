@@ -4,6 +4,7 @@
 /idea
 # testing
 /coverage
+.env
 
 # production
 /build

@@ -10,8 +10,8 @@ const Resume = () => {
 
   useEffect(() => {
     async function getData() {
-      const school = await axios("http://localhost:1337/api/schools");
-      const work = await axios("http://localhost:1337/api/works");
+      const school = await axios(process.env.envVar.REACT_APP_SCHOOL_DATA);
+      const work = await axios(process.env.envVar.REACT_APP_WORK_DATA);
 
       setSchoolData(school.data);
       setWorkData(work.data);
