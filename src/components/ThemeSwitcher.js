@@ -1,7 +1,15 @@
 import React, { useContext } from "react";
 import { RetroThemeContext } from "../context/RetroThemeContext";
 import Switch from "react-switch";
-import { Box, Typography } from "@material-ui/core";
+import { Box, Typography, makeStyles } from "@material-ui/core";
+
+const useStyles = makeStyles((theme) => ({
+  toggler: {
+    position: "fixed",
+    right: '1.5rem',
+    top: '1.5rem'
+  },
+}));
 
 const ThemeSwitcher = () => {
   const { retroTheme, setRetroTheme } = useContext(RetroThemeContext);
@@ -10,8 +18,10 @@ const ThemeSwitcher = () => {
     setRetroTheme(!retroTheme);
   };
 
+  const classes = useStyles();
+
   return (
-    <Box>
+    <Box className={classes.toggler}>
       <Typography variant="h6" gutterBottom>
         Toggle theme
       </Typography>

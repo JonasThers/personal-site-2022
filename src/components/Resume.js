@@ -29,7 +29,7 @@ const Resume = () => {
       {loading ? (
         "Loading"
       ) : (
-        <Grid container spacing={2}>
+        <Grid container>
           <Grid item xs={6}>
             <ExperienceContainer
               title="Work experience"

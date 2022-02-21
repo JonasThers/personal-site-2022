@@ -17,44 +17,44 @@ const retro = createMuiTheme({
       default: "#000",
     },
     text: {
-      primary: '#fff',
+      primary: "#fff",
     },
   },
   typography: {
-    "fontFamily": `"Press Start 2P", cursive`,
-    "fontSize": 14,
-    "fontWeightLight": 300,
-    "fontWeightRegular": 400,
-    "fontWeightMedium": 500,
+    fontFamily: `"Press Start 2P", cursive`,
+    fontSize: 14,
+    fontWeightLight: 300,
+    fontWeightRegular: 400,
+    fontWeightMedium: 500,
     allVariants: {
-      textTransform: 'uppercase'
-    }
-   },
+      textTransform: "uppercase",
+    },
+  },
 });
 
 export const modern = createMuiTheme({
   palette: {
     text: {
-      primary: '#fff',
+      primary: "#fff",
     },
   },
   typography: {
-    "fontFamily": `"Poppins", sans-serif`,
-    "fontSize": 14,
-    "fontWeightLight": 300,
-    "fontWeightRegular": 400,
-    "fontWeightMedium": 500
-   },
+    fontFamily: `"Poppins", sans-serif`,
+    fontSize: 14,
+    fontWeightLight: 300,
+    fontWeightRegular: 400,
+    fontWeightMedium: 500,
+  },
   overrides: {
     MuiCssBaseline: {
-      '@global': {
-         body: {
-           background: 'linear-gradient(to right, #3949AB, #42A5F5)',
+      "@global": {
+        body: {
+          background: "linear-gradient(to right, #3949AB, #42A5F5)",
         },
       },
     },
   },
-})
+});
 
 const App = () => {
   const [loading, setLoading] = useState(true);
