@@ -11,7 +11,7 @@ import emailjs from "emailjs-com";
 
 const Contact = () => {
   const [buttonLoading, setButtonLoading] = useState(false);
-  const [formMessage, setFormMessage] = useState('');
+  const [formMessage, setFormMessage] = useState("");
 
   const {
     register,
@@ -35,7 +35,7 @@ const Contact = () => {
         (result) => {
           event.target.reset();
           setButtonLoading(false);
-          setFormMessage('Thank you for reaching out! Talk to you soon!')
+          setFormMessage("Thank you for reaching out! Talk to you soon!");
         },
         (error) => {
           console.log(error.text);
@@ -46,6 +46,9 @@ const Contact = () => {
 
   return (
     <Box>
+      <Typography variant="h3" gutterBottom>
+        Contact
+      </Typography>
       <form onSubmit={handleSubmit(sendEmail)}>
         <TextField
           id="outlined-basic"
@@ -77,12 +80,10 @@ const Contact = () => {
         />
         {errors.messageRequired && <span>Don't you have anything to say?</span>}
         <Button disabled={buttonLoading ? true : false} type="submit">
-          {buttonLoading ? <CircularProgress /> : "Send"}
+          {buttonLoading ? "Sending" : "Send"}
         </Button>
       </form>
-      <Box>
-                {formMessage}
-            </Box>
+      <Box>{formMessage}</Box>
     </Box>
   );
 };

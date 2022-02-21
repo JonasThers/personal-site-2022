@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ExperienceContainer from "./ExperienceContainer";
-import { Box, Grid } from "@material-ui/core";
+import { Typography, Box, Grid } from "@material-ui/core";
 
 const Resume = () => {
   const [loading, setLoading] = useState(true);
@@ -23,7 +23,9 @@ const Resume = () => {
 
   return (
     <Box id="resume">
-      Resume
+      <Typography variant="h3" gutterBottom>
+        About me
+      </Typography>
       {loading ? (
         "Loading"
       ) : (

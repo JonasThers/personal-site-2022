@@ -1,29 +1,45 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { LoadingContext } from '../context/LoadingContext';
+import React, { useState, useEffect, useContext } from "react";
+import { LoadingContext } from "../context/LoadingContext";
+import { Box, Typography, makeStyles } from "@material-ui/core";
 
 const Loading = () => {
+  const useStyles = makeStyles((theme) => ({
+    wrapper: {
+      height: "100vh",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+    },
+    loading: {
+      textAlign: "center",
+    },
+  }));
 
-    const [ dots, setDots] = useState('');
+  const classes = useStyles();
 
-    const { setLoading } = useContext(LoadingContext);
+  const [dots, setDots] = useState("");
 
-    useEffect(() => {
-        setTimeout(() => {
-            setDots(dots + '.');
-        }, 500);
-    }, [dots]);
+  const { setLoading } = useContext(LoadingContext);
 
-    useEffect(() => {
-        setTimeout(() => {
-            setLoading(false);
-        }, 2000);
-    }, []);
+  useEffect(() => {
+    setTimeout(() => {
+      setDots(dots + ".");
+    }, 500);
+  }, [dots]);
 
-    return (
-        <>
-            Loading{dots}
-        </>
-    )
-}
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
+
+  return (
+    <Box className={classes.wrapper}>
+      <Typography variant="h3" gutterBottom className={classes.loading}>
+        Loading{dots}
+      </Typography>
+    </Box>
+  );
+};
 
 export default Loading;
