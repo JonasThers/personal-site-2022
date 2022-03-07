@@ -59,10 +59,10 @@ const ExperienceContainer = (props) => {
                 - At {data.attributes.Work}
               </Typography>
               <Typography variant="body1" gutterBottom>
-                - Technologies used: {data.attributes.Technologies}
+               - {data.attributes.Start} - {data.attributes.End}
               </Typography>
               <Typography variant="body1" gutterBottom>
-                {data.attributes.Start} - {data.attributes.End}
+                - Technologies used: {data.attributes.Technologies}
               </Typography>
             </Box>
           );
@@ -80,7 +80,7 @@ const ExperienceContainer = (props) => {
       </Typography>
       {data.map((data, index) => {
         return (
-          <Box key={index}>
+          <Box key={index} className={classes.containerEntry}>
             <Typography variant="h5" gutterBottom>
               {data.attributes.Degree}
             </Typography>
